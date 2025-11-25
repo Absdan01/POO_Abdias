@@ -1,0 +1,25 @@
+class Agenda:
+    def __init__(self):
+        self.contactos = [] 
+    
+    def agregar(self, nombre, tel):
+        self.contactos.append((nombre, tel))
+    
+    def buscar(self, nombre):
+        for c in self.contactos:
+            if c[0] == nombre:
+                return c
+        return "No encontrado"
+    
+    def mostrar(self):
+        print("--- Contactos ---")
+        for c in self.contactos:
+            print(c)
+
+# Uso de la clase Agenda
+agenda = Agenda()
+agenda.agregar("Ana", "1111")
+agenda.agregar("Beto", "2222")
+agenda.mostrar()
+print(f"Buscar a Ana: {agenda.buscar('Ana')}")
+print("-" * 20)
